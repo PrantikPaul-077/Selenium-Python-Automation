@@ -132,3 +132,11 @@ The Jenkins agent must have:
 
 ## Important
 This project demonstrates the requested architecture. Website locators and user credentials may need updates if the demo website changes.
+
+
+## Author
+
+**Prantik Paul**
+
+B.Tech — Computer Science & Technology  
+Institute of Engineering & Management, Kolkata
