@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.5 (Python 3.14.7 on win32)" generated="2026-09-24T12:07:23.169080" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="D:\PROJECT\RobotFramework_Ecommerce_Automation_fixed\RobotFramework_Ecommerce_Automation\tests">
+<suite id="s1-s1" name="Ecommerce Tests" source="D:\PROJECT\RobotFramework_Ecommerce_Automation_fixed\RobotFramework_Ecommerce_Automation\tests\ecommerce_tests.robot">
+<kw name="Start Test Session" owner="common_keywords" type="SETUP">
+<kw name="Open Application Browser" owner="config">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-09-24T12:07:25.080109" level="INFO">Opening browser 'chrome' to base url 'https://automationexercise.com/'.</msg>
+<arg>${BASE_URL}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-09-24T12:07:25.079204" elapsed="11.738888"/>
+</kw>
+<kw name="Set Selenium Timeout" owner="SeleniumLibrary">
+<arg>${DEFAULT_TIMEOUT}</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" start="2026-09-24T12:07:36.818975" elapsed="0.002444"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-09-24T12:07:36.822069" elapsed="0.046002"/>
+</kw>
+<doc>Opens the browser and navigates to the application.</doc>
+<status status="PASS" start="2026-09-24T12:07:25.074560" elapsed="11.793721"/>
+</kw>
+<status status="PASS" start="2026-09-24T12:07:25.072146" elapsed="11.796261"/>
+</kw>
+<test id="s1-s1-t1" name="E-Commerce Login And Cart Flow" line="18">
+<kw name="Execute E-Commerce Flow">
+<kw name="Perform Login" owner="login_keywords">
+<kw name="Go To Login Page" owner="home_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-09-24T12:07:36.872240" level="INFO">Clicking element 'xpath=//a[contains(@href, '/login')]'.</msg>
+<arg>${REGISTER_LOGIN_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-24T12:07:36.871751" elapsed="3.801754"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Login to your account</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-24T12:07:40.673952" elapsed="0.024456"/>
+</kw>
+<status status="PASS" start="2026-09-24T12:07:36.871353" elapsed="3.827325"/>
+</kw>
+<kw name="Login With Credentials" owner="login_page">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-09-24T12:07:40.701111" level="INFO">Typing text 'your_test_email@example.com' into text field 'css=input[data-qa="login-email"]'.</msg>
+<arg>${EMAIL_INPUT}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-24T12:07:40.700251" elapsed="0.210004"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-09-24T12:07:40.911617" level="INFO">Typing password into text field 'css=input[data-qa="login-password"]'.</msg>
+<msg time="2026-09-24T12:07:41.084896" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PASSWORD_INPUT}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-24T12:07:40.910905" elapsed="0.304188"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-09-24T12:07:41.216410" level="INFO">Clicking element 'css=button[data-qa="login-button"]'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-24T12:07:41.215690" elapsed="2.596334"/>
+</kw>
+<arg>${email}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2026-09-24T12:07:40.699154" elapsed="3.113175"/>
+</kw>
+<arg>${email}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2026-09-24T12:07:36.870843" elapsed="6.941670"/>
+</kw>
+<kw name="Check Successful Login" owner="login_keywords">
+<kw name="Verify Login Success" owner="login_page">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<msg time="2026-09-24T12:07:56.669365" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=153.0.8010.53); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff62de61035+5a95]
+	chromedriver!(No symbol) [0x7ff62dd82c70]
+	chromedriver!(No symbol) [0x7ff62dba4a7d]
+	chromedriver!(No symbol) [0x7ff62db90422]
+	chromedriver!(No symbol) [0x7ff62dbb6116]
+	chromedriver!(No symbol) [0x7ff62dc30d50]
+	chromedriver!(No symbol) [0x7ff62dc4f4bd]
+	chromedriver!(No symbol) [0x7ff62dbf1d02]
+	chromedriver!(No symbol) [0x7ff62dbf2b13]
+	chromedriver!GetHandleVerifier [0x7ff62e281411+425e71]
+	chromedriver!GetHandleVerifier [0x7ff62e2aca47+4514a7]
+	chromedriver!GetHandleVerifier [0x7ff62e2a094e+4453ae]
+	chromedriver!GetHandleVerifier [0x7ff62df5bf6e+1009ce]
+	chromedriver!(No symbol) [0x7ff62dd90a05]
+	chromedriver!(No symbol) [0x7ff62dd8bcf4]
+	chromedriver!(No symbol) [0x7ff62dd8be84]
+	chromedriver!(No symbol) [0x7ff62dd766ac]
+	KERNEL32!BaseThreadInitThunk [0x7ffd7ae2cd87+17]
+	ntdll!RtlUserThreadStart [0x7ffd7b9ecaec+2c]
+</msg>
+<msg time="2026-09-24T12:07:56.671272" level="FAIL">WebDriverException: Message: target frame detached
+  (failed to check if window was closed: disconnected: Unable to receive message from renderer)
+  (Session info: chrome=153.0.8010.53)
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff62de61035+5a95]
+	chromedriver!(No symbol) [0x7ff62dd82c70]
+	chromedriver!(No symbol) [0x7ff62dba4876]
+	chromedriver!(No symbol) [0x7ff62db91750]
+	chromedriver!(No symbol) [0x7ff62db90636]
+	chromedriver!(No symbol) [0x7ff62dbb6116]
+	chromedriver!(No symbol) [0x7ff62dc30d50]
+	chromedriver!(No symbol) [0x7ff62dc4f4bd]
+	chromedriver!(No symbol) [0x7ff62dbf1d02]
+	chromedriver!(No symbol) [0x7ff62dbf2b13]
+	chromedriver!GetHandleVerifier [0x7ff62e281411+425e71]
+	chromedriver!GetHandleVerifier [0x7ff62e2aca47+4514a7]
+	chromedriver!GetHandleVerifier [0x7ff62e2a094e+4453ae]
+	chromedriver!GetHandleVerifier [0x7ff62df5bf6e+1009ce]
+	chromedriver!(No symbol) [0x7ff62dd90a05]
+	chromedriver!(No symbol) [0x7ff62dd8bcf4]
+	chromedriver!(No symbol) [0x7ff62dd8be84]
+	chromedriver!(No symbol) [0x7ff62dd766ac]
+	KERNEL32!BaseThreadInitThunk [0x7ffd7ae2cd87+17]
+	ntdll!RtlUserThreadStart [0x7ffd7b9ecaec+2c]
+</msg>
+<arg>Logged in as</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="FAIL" start="2026-09-24T12:07:43.814747" elapsed="13.288215">WebDriverException: Message: target frame detached
+  (failed to check if window was closed: disconnected: Unable to receive message from renderer)
+  (Session info: chrome=153.0.8010.53)
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff62de61035+5a95]
+	chromedriver!(No symbol) [0x7ff62dd82c70]
+	chromedriver!(No symbol) [0x7ff62dba4876]
+	chromedriver!(No symbol) [0x7ff62db91750]
+	chromedriver!(No symbol) [0x7ff62db90636]
+	chromedriver!(No symbol) [0x7ff62dbb6116]
+	chromedriver!(No symbol) [0x7ff62dc30d50]
+	chromedriver!(No symbol) [0x7ff62dc4f4bd]
+	chromedriver!(No symbol) [0x7ff62dbf1d02]
+	chromedriver!(No symbol) [0x7ff62dbf2b13]
+	chromedriver!GetHandleVerifier [0x7ff62e281411+425e71]
+	chromedriver!GetHandleVerifier [0x7ff62e2aca47+4514a7]
+	chromedriver!GetHandleVerifier [0x7ff62e2a094e+4453ae]
+	chromedriver!GetHandleVerifier [0x7ff62df5bf6e+1009ce]
+	chromedriver!(No symbol) [0x7ff62dd90a05]
+	chromedriver!(No symbol) [0x7ff62dd8bcf4]
+	chromedriver!(No symbol) [0x7ff62dd8be84]
+	chromedriver!(No symbol) [0x7ff62dd766ac]
+	KERNEL32!BaseThreadInitThunk [0x7ffd7ae2cd87+17]
+	ntdll!RtlUserThreadStart [0x7ffd7b9ecaec+2c]
+</status>
+</kw>
+<status status="FAIL" start="2026-09-24T12:07:43.813980" elapsed="13.289482">WebDriverException: Message: target frame detached
+  (failed to check if window was closed: disconnected: Unable to receive message from renderer)
+  (Session info: chrome=153.0.8010.53)
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff62de61035+5a95]
+	chromedriver!(No symbol) [0x7ff62dd82c70]
+	chromedriver!(No symbol) [0x7ff62dba4876]
+	chromedriver!(No symbol) [0x7ff62db91750]
+	chromedriver!(No symbol) [0x7ff62db90636]
+	chromedriver!(No symbol) [0x7ff62dbb6116]
+	chromedriver!(No symbol) [0x7ff62dc30d50]
+	chromedriver!(No symbol) [0x7ff62dc4f4bd]
+	chromedriver!(No symbol) [0x7ff62dbf1d02]
+	chromedriver!(No symbol) [0x7ff62dbf2b13]
+	chromedriver!GetHandleVerifier [0x7ff62e281411+425e71]
+	chromedriver!GetHandleVerifier [0x7ff62e2aca47+4514a7]
+	chromedriver!GetHandleVerifier [0x7ff62e2a094e+4453ae]
+	chromedriver!GetHandleVerifier [0x7ff62df5bf6e+1009ce]
+	chromedriver!(No symbol) [0x7ff62dd90a05]
+	chromedriver!(No symbol) [0x7ff62dd8bcf4]
+	chromedriver!(No symbol) [0x7ff62dd8be84]
+	chromedriver!(No symbol) [0x7ff62dd766ac]
+	KERNEL32!BaseThreadInitThunk [0x7ffd7ae2cd87+17]
+	ntdll!RtlUserThreadStart [0x7ffd7b9ecaec+2c]
+</status>
+</kw>
+<status status="FAIL" start="2026-09-24T12:07:43.812976" elapsed="13.290734">WebDriverException: Message: target frame detached
+  (failed to check if window was closed: disconnected: Unable to receive message from renderer)
+  (Session info: chrome=153.0.8010.53)
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff62de61035+5a95]
+	chromedriver!(No symbol) [0x7ff62dd82c70]
+	chromedriver!(No symbol) [0x7ff62dba4876]
+	chromedriver!(No symbol) [0x7ff62db91750]
+	chromedriver!(No symbol) [0x7ff62db90636]
+	chromedriver!(No symbol) [0x7ff62dbb6116]
+	chromedriver!(No symbol) [0x7ff62dc30d50]
+	chromedriver!(No symbol) [0x7ff62dc4f4bd]
+	chromedriver!(No symbol) [0x7ff62dbf1d02]
+	chromedriver!(No symbol) [0x7ff62dbf2b13]
+	chromedriver!GetHandleVerifier [0x7ff62e281411+425e71]
+	chromedriver!GetHandleVerifier [0x7ff62e2aca47+4514a7]
+	chromedriver!GetHandleVerifier [0x7ff62e2a094e+4453ae]
+	chromedriver!GetHandleVerifier [0x7ff62df5bf6e+1009ce]
+	chromedriver!(No symbol) [0x7ff62dd90a05]
+	chromedriver!(No symbol) [0x7ff62dd8bcf4]
+	chromedriver!(No symbol) [0x7ff62dd8be84]
+	chromedriver!(No symbol) [0x7ff62dd766ac]
+	KERNEL32!BaseThreadInitThunk [0x7ffd7ae2cd87+17]
+	ntdll!RtlUserThreadStart [0x7ffd7b9ecaec+2c]
+</status>
+</kw>
+<kw name="Perform Product Cart Flow" owner="product_keywords">
+<arg>${product}</arg>
+<arg>${quantity}</arg>
+<status status="NOT RUN" start="2026-09-24T12:07:57.104168" elapsed="0.000079"/>
+</kw>
+<kw name="Logout From Application" owner="home_page">
+<status status="NOT RUN" start="2026-09-24T12:07:57.104555" elapsed="0.000064"/>
+</kw>
+<arg>email=your_test_email@example.com</arg>
+<arg>password=REPLACE_WITH_TEST_PASSWORD</arg>
+<arg>product=Blue Top</arg>
+<arg>quantity=2</arg>
+<status status="FAIL" start="2026-09-24T12:07:36.870218" elapsed="20.234628">WebDriverException: Message: target frame detached
+  (failed to check if window was closed: disconnected: Unable to receive message from renderer)
+  (Session info: chrome=153.0.8010.53)
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff62de61035+5a95]
+	chromedriver!(No symbol) [0x7ff62dd82c70]
+	chromedriver!(No symbol) [0x7ff62dba4876]
+	chromedriver!(No symbol) [0x7ff62db91750]
+	chromedriver!(No symbol) [0x7ff62db90636]
+	chromedriver!(No symbol) [0x7ff62dbb6116]
+	chromedriver!(No symbol) [0x7ff62dc30d50]
+	chromedriver!(No symbol) [0x7ff62dc4f4bd]
+	chromedriver!(No symbol) [0x7ff62dbf1d02]
+	chromedriver!(No symbol) [0x7ff62dbf2b13]
+	chromedriver!GetHandleVerifier [0x7ff62e281411+425e71]
+	chromedriver!GetHandleVerifier [0x7ff62e2aca47+4514a7]
+	chromedriver!GetHandleVerifier [0x7ff62e2a094e+4453ae]
+	chromedriver!GetHandleVerifier [0x7ff62df5bf6e+1009ce]
+	chromedriver!(No symbol) [0x7ff62dd90a05]
+	chromedriver!(No symbol) [0x7ff62dd8bcf4]
+	chromedriver!(No symbol) [0x7ff62dd8be84]
+	chromedriver!(No symbol) [0x7ff62dd766ac]
+	KERNEL32!BaseThreadInitThunk [0x7ffd7ae2cd87+17]
+	ntdll!RtlUserThreadStart [0x7ffd7b9ecaec+2c]
+</status>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn" type="TEARDOWN">
+<kw name="Capture Failure Screenshot" owner="config">
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2026-09-24T12:07:57.108188" level="INFO" html="true">Directory '&lt;a href="file://D:\PROJECT\RobotFramework_Ecommerce_Automation_fixed\RobotFramework_Ecommerce_Automation\results\screenshots"&gt;D:\PROJECT\RobotFramework_Ecommerce_Automation_fixed\RobotFramework_Ecommerce_Automation\results\screenshots&lt;/a&gt;' already exists.</msg>
+<arg>${SCREENSHOT_DIR}</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2026-09-24T12:07:57.107791" elapsed="0.000533"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-09-24T12:07:57.114453" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff62de61035+5a95]
+	chromedriver!(No symbol) [0x7ff62dd82c70]
+	chromedriver!(No symbol) [0x7ff62dba4876]
+	chromedriver!(No symbol) [0x7ff62dbf0e03]
+	chromedriver!(No symbol) [0x7ff62dc292f2]
+	chromedriver!(No symbol) [0x7ff62dc230c2]
+	chromedriver!(No symbol) [0x7ff62dc22843]
+	chromedriver!(No symbol) [0x7ff62db6cdcb]
+	chromedriver!(No symbol) [0x7ff62db6d422]
+	chromedriver!(No symbol) [0x7ff62db6da55]
+	chromedriver!GetHandleVerifier [0x7ff62e281411+425e71]
+	chromedriver!GetHandleVerifier [0x7ff62e2aca47+4514a7]
+	chromedriver!GetHandleVerifier [0x7ff62e2a094e+4453ae]
+	chromedriver!GetHandleVerifier [0x7ff62df5bf6e+1009ce]
+	chromedriver!(No symbol) [0x7ff62dd90a05]
+	chromedriver!(No symbol) [0x7ff62db6c20a]
+	chromedriver!GetHandleVerifier [0x7ff62e302f9f+4a79ff]
+	KERNEL32!BaseThreadInitThunk [0x7ffd7ae2cd87+17]
+	ntdll!RtlUserThreadStart [0x7ffd7b9ecaec+2c]
+</msg>
+<msg time="2026-09-24T12:07:57.115377" level="FAIL">InvalidSessionIdException: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff62de61035+5a95]
+	chromedriver!(No symbol) [0x7ff62dd82c70]
+	chromedriver!(No symbol) [0x7ff62dba4876]
+	chromedriver!(No symbol) [0x7ff62dbf0e03]
+	chromedriver!(No symbol) [0x7ff62dc292f2]
+	chromedriver!(No symbol) [0x7ff62dc230c2]
+	chromedriver!(No symbol) [0x7ff62dc22843]
+	chromedriver!(No symbol) [0x7ff62db6cdcb]
+	chromedriver!(No symbol) [0x7ff62db6d422]
+	chromedriver!(No symbol) [0x7ff62db6da55]
+	chromedriver!GetHandleVerifier [0x7ff62e281411+425e71]
+	chromedriver!GetHandleVerifier [0x7ff62e2aca47+4514a7]
+	chromedriver!GetHandleVerifier [0x7ff62e2a094e+4453ae]
+	chromedriver!GetHandleVerifier [0x7ff62df5bf6e+1009ce]
+	chromedriver!(No symbol) [0x7ff62dd90a05]
+	chromedriver!(No symbol) [0x7ff62db6c20a]
+	chromedriver!GetHandleVerifier [0x7ff62e302f9f+4a79ff]
+	KERNEL32!BaseThreadInitThunk [0x7ffd7ae2cd87+17]
+	ntdll!RtlUserThreadStart [0x7ffd7b9ecaec+2c]
+</msg>
+<arg>${SCREENSHOT_DIR}${/}${name}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="FAIL" start="2026-09-24T12:07:57.108733" elapsed="0.046037">InvalidSessionIdException: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff62de61035+5a95]
+	chromedriver!(No symbol) [0x7ff62dd82c70]
+	chromedriver!(No symbol) [0x7ff62dba4876]
+	chromedriver!(No symbol) [0x7ff62dbf0e03]
+	chromedriver!(No symbol) [0x7ff62dc292f2]
+	chromedriver!(No symbol) [0x7ff62dc230c2]
+	chromedriver!(No symbol) [0x7ff62dc22843]
+	chromedriver!(No symbol) [0x7ff62db6cdcb]
+	chromedriver!(No symbol) [0x7ff62db6d422]
+	chromedriver!(No symbol) [0x7ff62db6da55]
+	chromedriver!GetHandleVerifier [0x7ff62e281411+425e71]
+	chromedriver!GetHandleVerifier [0x7ff62e2aca47+4514a7]
+	chromedriver!GetHandleVerifier [0x7ff62e2a094e+4453ae]
+	chromedriver!GetHandleVerifier [0x7ff62df5bf6e+1009ce]
+	chromedriver!(No symbol) [0x7ff62dd90a05]
+	chromedriver!(No symbol) [0x7ff62db6c20a]
+	chromedriver!GetHandleVerifier [0x7ff62e302f9f+4a79ff]
+	KERNEL32!BaseThreadInitThunk [0x7ffd7ae2cd87+17]
+	ntdll!RtlUserThreadStart [0x7ffd7b9ecaec+2c]
+</status>
+</kw>
+<arg>${TEST NAME}</arg>
+<doc>Captures a screenshot with a timestamp-friendly Robot name.</doc>
+<status status="FAIL" start="2026-09-24T12:07:57.106947" elapsed="0.048341">InvalidSessionIdException: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff62de61035+5a95]
+	chromedriver!(No symbol) [0x7ff62dd82c70]
+	chromedriver!(No symbol) [0x7ff62dba4876]
+	chromedriver!(No symbol) [0x7ff62dbf0e03]
+	chromedriver!(No symbol) [0x7ff62dc292f2]
+	chromedriver!(No symbol) [0x7ff62dc230c2]
+	chromedriver!(No symbol) [0x7ff62dc22843]
+	chromedriver!(No symbol) [0x7ff62db6cdcb]
+	chromedriver!(No symbol) [0x7ff62db6d422]
+	chromedriver!(No symbol) [0x7ff62db6da55]
+	chromedriver!GetHandleVerifier [0x7ff62e281411+425e71]
+	chromedriver!GetHandleVerifier [0x7ff62e2aca47+4514a7]
+	chromedriver!GetHandleVerifier [0x7ff62e2a094e+4453ae]
+	chromedriver!GetHandleVerifier [0x7ff62df5bf6e+1009ce]
+	chromedriver!(No symbol) [0x7ff62dd90a05]
+	chromedriver!(No symbol) [0x7ff62db6c20a]
+	chromedriver!GetHandleVerifier [0x7ff62e302f9f+4a79ff]
+	KERNEL32!BaseThreadInitThunk [0x7ffd7ae2cd87+17]
+	ntdll!RtlUserThreadStart [0x7ffd7b9ecaec+2c]
+</status>
+</kw>
+<arg>Capture Failure Screenshot</arg>
+<arg>${TEST NAME}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible errorw.</doc>
+<status status="PASS" start="2026-09-24T12:07:57.105821" elapsed="0.049906"/>
+</kw>
+<status status="FAIL" start="2026-09-24T12:07:36.868555" elapsed="20.290235">WebDriverException: Message: target frame detached
+  (failed to check if window was closed: disconnected: Unable to receive message from renderer)
+  (Session info: chrome=153.0.8010.53)
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff62de61035+5a95]
+	chromedriver!(No symbol) [0x7ff62dd82c70]
+	chromedriver!(No symbol) [0x7ff62dba4876]
+	chromedriver!(No symbol) [0x7ff62db91750]
+	chromedriver!(No symbol) [0x7ff62db90636]
+	chromedriver!(No symbol) [0x7ff62dbb6116]
+	chromedriver!(No symbol) [0x7ff62dc30d50]
+	chromedriver!(No symbol) [0x7ff62dc4f4bd]
+	chromedriver!(No symbol) [0x7ff62dbf1d02]
+	chromedriver!(No symbol) [0x7ff62dbf2b13]
+	chromedriver!GetHandleVerifier [0x7ff62e281411+425e71]
+	chromedriver!GetHandleVerifier [0x7ff62e2aca47+4514a7]
+	chromedriver!GetHandleVerifier [0x7ff62e2a094e+4453ae]
+	chromedriver!GetHandleVerifier [0x7ff62df5bf6e+1009ce]
+	chromedriver!(No symbol) [0x7ff62dd90a05]
+	chromedriver!(No symbol) [0x7ff62dd8bcf4]
+	chromedriver!(No symbol) [0x7ff62dd8be84]
+	chromedriver!(No symbol) [0x7ff62dd766ac]
+	KERNEL32!BaseThreadInitThunk [0x7ffd7ae2cd87+17]
+	ntdll!RtlUserThreadStart [0x7ffd7b9ecaec+2c]
+</status>
+</test>
+<kw name="End Test Session" owner="common_keywords" type="TEARDOWN">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Capture Failure Screenshot" owner="config">
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2026-09-24T12:07:57.164404" level="INFO" html="true">Directory '&lt;a href="file://D:\PROJECT\RobotFramework_Ecommerce_Automation_fixed\RobotFramework_Ecommerce_Automation\results\screenshots"&gt;D:\PROJECT\RobotFramework_Ecommerce_Automation_fixed\RobotFramework_Ecommerce_Automation\results\screenshots&lt;/a&gt;' already exists.</msg>
+<arg>${SCREENSHOT_DIR}</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2026-09-24T12:07:57.163976" elapsed="0.000539"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-09-24T12:07:57.169166" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff62de61035+5a95]
+	chromedriver!(No symbol) [0x7ff62dd82c70]
+	chromedriver!(No symbol) [0x7ff62dba4876]
+	chromedriver!(No symbol) [0x7ff62dbf0e03]
+	chromedriver!(No symbol) [0x7ff62dc292f2]
+	chromedriver!(No symbol) [0x7ff62dc230c2]
+	chromedriver!(No symbol) [0x7ff62dc22843]
+	chromedriver!(No symbol) [0x7ff62db6cdcb]
+	chromedriver!(No symbol) [0x7ff62db6d422]
+	chromedriver!(No symbol) [0x7ff62db6da55]
+	chromedriver!GetHandleVerifier [0x7ff62e281411+425e71]
+	chromedriver!GetHandleVerifier [0x7ff62e2aca47+4514a7]
+	chromedriver!GetHandleVerifier [0x7ff62e2a094e+4453ae]
+	chromedriver!GetHandleVerifier [0x7ff62df5bf6e+1009ce]
+	chromedriver!(No symbol) [0x7ff62dd90a05]
+	chromedriver!(No symbol) [0x7ff62db6c20a]
+	chromedriver!GetHandleVerifier [0x7ff62e302f9f+4a79ff]
+	KERNEL32!BaseThreadInitThunk [0x7ffd7ae2cd87+17]
+	ntdll!RtlUserThreadStart [0x7ffd7b9ecaec+2c]
+</msg>
+<msg time="2026-09-24T12:07:57.169936" level="FAIL">InvalidSessionIdException: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff62de61035+5a95]
+	chromedriver!(No symbol) [0x7ff62dd82c70]
+	chromedriver!(No symbol) [0x7ff62dba4876]
+	chromedriver!(No symbol) [0x7ff62dbf0e03]
+	chromedriver!(No symbol) [0x7ff62dc292f2]
+	chromedriver!(No symbol) [0x7ff62dc230c2]
+	chromedriver!(No symbol) [0x7ff62dc22843]
+	chromedriver!(No symbol) [0x7ff62db6cdcb]
+	chromedriver!(No symbol) [0x7ff62db6d422]
+	chromedriver!(No symbol) [0x7ff62db6da55]
+	chromedriver!GetHandleVerifier [0x7ff62e281411+425e71]
+	chromedriver!GetHandleVerifier [0x7ff62e2aca47+4514a7]
+	chromedriver!GetHandleVerifier [0x7ff62e2a094e+4453ae]
+	chromedriver!GetHandleVerifier [0x7ff62df5bf6e+1009ce]
+	chromedriver!(No symbol) [0x7ff62dd90a05]
+	chromedriver!(No symbol) [0x7ff62db6c20a]
+	chromedriver!GetHandleVerifier [0x7ff62e302f9f+4a79ff]
+	KERNEL32!BaseThreadInitThunk [0x7ffd7ae2cd87+17]
+	ntdll!RtlUserThreadStart [0x7ffd7b9ecaec+2c]
+</msg>
+<arg>${SCREENSHOT_DIR}${/}${name}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="FAIL" start="2026-09-24T12:07:57.164854" elapsed="0.009801">InvalidSessionIdException: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff62de61035+5a95]
+	chromedriver!(No symbol) [0x7ff62dd82c70]
+	chromedriver!(No symbol) [0x7ff62dba4876]
+	chromedriver!(No symbol) [0x7ff62dbf0e03]
+	chromedriver!(No symbol) [0x7ff62dc292f2]
+	chromedriver!(No symbol) [0x7ff62dc230c2]
+	chromedriver!(No symbol) [0x7ff62dc22843]
+	chromedriver!(No symbol) [0x7ff62db6cdcb]
+	chromedriver!(No symbol) [0x7ff62db6d422]
+	chromedriver!(No symbol) [0x7ff62db6da55]
+	chromedriver!GetHandleVerifier [0x7ff62e281411+425e71]
+	chromedriver!GetHandleVerifier [0x7ff62e2aca47+4514a7]
+	chromedriver!GetHandleVerifier [0x7ff62e2a094e+4453ae]
+	chromedriver!GetHandleVerifier [0x7ff62df5bf6e+1009ce]
+	chromedriver!(No symbol) [0x7ff62dd90a05]
+	chromedriver!(No symbol) [0x7ff62db6c20a]
+	chromedriver!GetHandleVerifier [0x7ff62e302f9f+4a79ff]
+	KERNEL32!BaseThreadInitThunk [0x7ffd7ae2cd87+17]
+	ntdll!RtlUserThreadStart [0x7ffd7b9ecaec+2c]
+</status>
+</kw>
+<arg>test_end</arg>
+<doc>Captures a screenshot with a timestamp-friendly Robot name.</doc>
+<status status="FAIL" start="2026-09-24T12:07:57.163244" elapsed="0.011828">InvalidSessionIdException: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff62de61035+5a95]
+	chromedriver!(No symbol) [0x7ff62dd82c70]
+	chromedriver!(No symbol) [0x7ff62dba4876]
+	chromedriver!(No symbol) [0x7ff62dbf0e03]
+	chromedriver!(No symbol) [0x7ff62dc292f2]
+	chromedriver!(No symbol) [0x7ff62dc230c2]
+	chromedriver!(No symbol) [0x7ff62dc22843]
+	chromedriver!(No symbol) [0x7ff62db6cdcb]
+	chromedriver!(No symbol) [0x7ff62db6d422]
+	chromedriver!(No symbol) [0x7ff62db6da55]
+	chromedriver!GetHandleVerifier [0x7ff62e281411+425e71]
+	chromedriver!GetHandleVerifier [0x7ff62e2aca47+4514a7]
+	chromedriver!GetHandleVerifier [0x7ff62e2a094e+4453ae]
+	chromedriver!GetHandleVerifier [0x7ff62df5bf6e+1009ce]
+	chromedriver!(No symbol) [0x7ff62dd90a05]
+	chromedriver!(No symbol) [0x7ff62db6c20a]
+	chromedriver!GetHandleVerifier [0x7ff62e302f9f+4a79ff]
+	KERNEL32!BaseThreadInitThunk [0x7ffd7ae2cd87+17]
+	ntdll!RtlUserThreadStart [0x7ffd7b9ecaec+2c]
+</status>
+</kw>
+<arg>Capture Failure Screenshot</arg>
+<arg>test_end</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible errorw.</doc>
+<status status="PASS" start="2026-09-24T12:07:57.162342" elapsed="0.012957"/>
+</kw>
+<kw name="Close Application Browser" owner="config">
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2026-09-24T12:07:57.176330" elapsed="2.076044"/>
+</kw>
+<doc>Closes the current browser session.</doc>
+<status status="PASS" start="2026-09-24T12:07:57.175759" elapsed="2.077122"/>
+</kw>
+<status status="PASS" start="2026-09-24T12:07:57.161778" elapsed="2.091356"/>
+</kw>
+<doc>E-commerce automation suite for Capstone Assignment 4.</doc>
+<status status="FAIL" start="2026-09-24T12:07:23.253575" elapsed="35.999766"/>
+</suite>
+<status status="FAIL" start="2026-09-24T12:07:23.172491" elapsed="36.084578"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Tests" id="s1" pass="0" fail="1" skip="0">Tests</stat>
+<stat name="Ecommerce Tests" id="s1-s1" pass="0" fail="1" skip="0">Tests.Ecommerce Tests</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2026-09-24T12:07:56.669365" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=153.0.8010.53); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff62de61035+5a95]
+	chromedriver!(No symbol) [0x7ff62dd82c70]
+	chromedriver!(No symbol) [0x7ff62dba4a7d]
+	chromedriver!(No symbol) [0x7ff62db90422]
+	chromedriver!(No symbol) [0x7ff62dbb6116]
+	chromedriver!(No symbol) [0x7ff62dc30d50]
+	chromedriver!(No symbol) [0x7ff62dc4f4bd]
+	chromedriver!(No symbol) [0x7ff62dbf1d02]
+	chromedriver!(No symbol) [0x7ff62dbf2b13]
+	chromedriver!GetHandleVerifier [0x7ff62e281411+425e71]
+	chromedriver!GetHandleVerifier [0x7ff62e2aca47+4514a7]
+	chromedriver!GetHandleVerifier [0x7ff62e2a094e+4453ae]
+	chromedriver!GetHandleVerifier [0x7ff62df5bf6e+1009ce]
+	chromedriver!(No symbol) [0x7ff62dd90a05]
+	chromedriver!(No symbol) [0x7ff62dd8bcf4]
+	chromedriver!(No symbol) [0x7ff62dd8be84]
+	chromedriver!(No symbol) [0x7ff62dd766ac]
+	KERNEL32!BaseThreadInitThunk [0x7ffd7ae2cd87+17]
+	ntdll!RtlUserThreadStart [0x7ffd7b9ecaec+2c]
+</msg>
+<msg time="2026-09-24T12:07:57.114453" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff62de61035+5a95]
+	chromedriver!(No symbol) [0x7ff62dd82c70]
+	chromedriver!(No symbol) [0x7ff62dba4876]
+	chromedriver!(No symbol) [0x7ff62dbf0e03]
+	chromedriver!(No symbol) [0x7ff62dc292f2]
+	chromedriver!(No symbol) [0x7ff62dc230c2]
+	chromedriver!(No symbol) [0x7ff62dc22843]
+	chromedriver!(No symbol) [0x7ff62db6cdcb]
+	chromedriver!(No symbol) [0x7ff62db6d422]
+	chromedriver!(No symbol) [0x7ff62db6da55]
+	chromedriver!GetHandleVerifier [0x7ff62e281411+425e71]
+	chromedriver!GetHandleVerifier [0x7ff62e2aca47+4514a7]
+	chromedriver!GetHandleVerifier [0x7ff62e2a094e+4453ae]
+	chromedriver!GetHandleVerifier [0x7ff62df5bf6e+1009ce]
+	chromedriver!(No symbol) [0x7ff62dd90a05]
+	chromedriver!(No symbol) [0x7ff62db6c20a]
+	chromedriver!GetHandleVerifier [0x7ff62e302f9f+4a79ff]
+	KERNEL32!BaseThreadInitThunk [0x7ffd7ae2cd87+17]
+	ntdll!RtlUserThreadStart [0x7ffd7b9ecaec+2c]
+</msg>
+<msg time="2026-09-24T12:07:57.169166" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff62de61035+5a95]
+	chromedriver!(No symbol) [0x7ff62dd82c70]
+	chromedriver!(No symbol) [0x7ff62dba4876]
+	chromedriver!(No symbol) [0x7ff62dbf0e03]
+	chromedriver!(No symbol) [0x7ff62dc292f2]
+	chromedriver!(No symbol) [0x7ff62dc230c2]
+	chromedriver!(No symbol) [0x7ff62dc22843]
+	chromedriver!(No symbol) [0x7ff62db6cdcb]
+	chromedriver!(No symbol) [0x7ff62db6d422]
+	chromedriver!(No symbol) [0x7ff62db6da55]
+	chromedriver!GetHandleVerifier [0x7ff62e281411+425e71]
+	chromedriver!GetHandleVerifier [0x7ff62e2aca47+4514a7]
+	chromedriver!GetHandleVerifier [0x7ff62e2a094e+4453ae]
+	chromedriver!GetHandleVerifier [0x7ff62df5bf6e+1009ce]
+	chromedriver!(No symbol) [0x7ff62dd90a05]
+	chromedriver!(No symbol) [0x7ff62db6c20a]
+	chromedriver!GetHandleVerifier [0x7ff62e302f9f+4a79ff]
+	KERNEL32!BaseThreadInitThunk [0x7ffd7ae2cd87+17]
+	ntdll!RtlUserThreadStart [0x7ffd7b9ecaec+2c]
+</msg>
+</errors>
+</robot>
